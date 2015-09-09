@@ -1,0 +1,441 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		46A968011BA0DF1D003AB227 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A968001BA0DF1D003AB227 /* AppDelegate.swift */; };
+		46A968041BA0DF1E003AB227 /* Excalibur.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46A968021BA0DF1E003AB227 /* Excalibur.xcdatamodeld */; };
+		46A968061BA0DF1E003AB227 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A968051BA0DF1E003AB227 /* ViewController.swift */; };
+		46A968091BA0DF1E003AB227 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46A968071BA0DF1E003AB227 /* Main.storyboard */; };
+		46A9680B1BA0DF1E003AB227 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46A9680A1BA0DF1E003AB227 /* Images.xcassets */; };
+		46A9680E1BA0DF1E003AB227 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46A9680C1BA0DF1E003AB227 /* LaunchScreen.xib */; };
+		46A9681A1BA0DF1E003AB227 /* ExcaliburTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A968191BA0DF1E003AB227 /* ExcaliburTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		46A968141BA0DF1E003AB227 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46A967F31BA0DF1D003AB227 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46A967FA1BA0DF1D003AB227;
+			remoteInfo = Excalibur;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		46A967FB1BA0DF1D003AB227 /* Excalibur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Excalibur.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46A967FF1BA0DF1D003AB227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46A968001BA0DF1D003AB227 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		46A968031BA0DF1E003AB227 /* Excalibur.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Excalibur.xcdatamodel; sourceTree = "<group>"; };
+		46A968051BA0DF1E003AB227 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		46A968081BA0DF1E003AB227 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		46A9680A1BA0DF1E003AB227 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		46A9680D1BA0DF1E003AB227 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		46A968131BA0DF1E003AB227 /* ExcaliburTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExcaliburTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46A968181BA0DF1E003AB227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46A968191BA0DF1E003AB227 /* ExcaliburTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcaliburTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		46A967F81BA0DF1D003AB227 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46A968101BA0DF1E003AB227 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		46A967F21BA0DF1D003AB227 = {
+			isa = PBXGroup;
+			children = (
+				46A967FD1BA0DF1D003AB227 /* Excalibur */,
+				46A968161BA0DF1E003AB227 /* ExcaliburTests */,
+				46A967FC1BA0DF1D003AB227 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		46A967FC1BA0DF1D003AB227 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				46A967FB1BA0DF1D003AB227 /* Excalibur.app */,
+				46A968131BA0DF1E003AB227 /* ExcaliburTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		46A967FD1BA0DF1D003AB227 /* Excalibur */ = {
+			isa = PBXGroup;
+			children = (
+				46A968001BA0DF1D003AB227 /* AppDelegate.swift */,
+				46A968051BA0DF1E003AB227 /* ViewController.swift */,
+				46A968071BA0DF1E003AB227 /* Main.storyboard */,
+				46A9680A1BA0DF1E003AB227 /* Images.xcassets */,
+				46A9680C1BA0DF1E003AB227 /* LaunchScreen.xib */,
+				46A968021BA0DF1E003AB227 /* Excalibur.xcdatamodeld */,
+				46A967FE1BA0DF1D003AB227 /* Supporting Files */,
+			);
+			path = Excalibur;
+			sourceTree = "<group>";
+		};
+		46A967FE1BA0DF1D003AB227 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				46A967FF1BA0DF1D003AB227 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		46A968161BA0DF1E003AB227 /* ExcaliburTests */ = {
+			isa = PBXGroup;
+			children = (
+				46A968191BA0DF1E003AB227 /* ExcaliburTests.swift */,
+				46A968171BA0DF1E003AB227 /* Supporting Files */,
+			);
+			path = ExcaliburTests;
+			sourceTree = "<group>";
+		};
+		46A968171BA0DF1E003AB227 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				46A968181BA0DF1E003AB227 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		46A967FA1BA0DF1D003AB227 /* Excalibur */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46A9681D1BA0DF1E003AB227 /* Build configuration list for PBXNativeTarget "Excalibur" */;
+			buildPhases = (
+				46A967F71BA0DF1D003AB227 /* Sources */,
+				46A967F81BA0DF1D003AB227 /* Frameworks */,
+				46A967F91BA0DF1D003AB227 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Excalibur;
+			productName = Excalibur;
+			productReference = 46A967FB1BA0DF1D003AB227 /* Excalibur.app */;
+			productType = "com.apple.product-type.application";
+		};
+		46A968121BA0DF1E003AB227 /* ExcaliburTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46A968201BA0DF1E003AB227 /* Build configuration list for PBXNativeTarget "ExcaliburTests" */;
+			buildPhases = (
+				46A9680F1BA0DF1E003AB227 /* Sources */,
+				46A968101BA0DF1E003AB227 /* Frameworks */,
+				46A968111BA0DF1E003AB227 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46A968151BA0DF1E003AB227 /* PBXTargetDependency */,
+			);
+			name = ExcaliburTests;
+			productName = ExcaliburTests;
+			productReference = 46A968131BA0DF1E003AB227 /* ExcaliburTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46A967F31BA0DF1D003AB227 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = TreeNine;
+				TargetAttributes = {
+					46A967FA1BA0DF1D003AB227 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					46A968121BA0DF1E003AB227 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 46A967FA1BA0DF1D003AB227;
+					};
+				};
+			};
+			buildConfigurationList = 46A967F61BA0DF1D003AB227 /* Build configuration list for PBXProject "Excalibur" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 46A967F21BA0DF1D003AB227;
+			productRefGroup = 46A967FC1BA0DF1D003AB227 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				46A967FA1BA0DF1D003AB227 /* Excalibur */,
+				46A968121BA0DF1E003AB227 /* ExcaliburTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		46A967F91BA0DF1D003AB227 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46A968091BA0DF1E003AB227 /* Main.storyboard in Resources */,
+				46A9680E1BA0DF1E003AB227 /* LaunchScreen.xib in Resources */,
+				46A9680B1BA0DF1E003AB227 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46A968111BA0DF1E003AB227 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		46A967F71BA0DF1D003AB227 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46A968061BA0DF1E003AB227 /* ViewController.swift in Sources */,
+				46A968011BA0DF1D003AB227 /* AppDelegate.swift in Sources */,
+				46A968041BA0DF1E003AB227 /* Excalibur.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46A9680F1BA0DF1E003AB227 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46A9681A1BA0DF1E003AB227 /* ExcaliburTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		46A968151BA0DF1E003AB227 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46A967FA1BA0DF1D003AB227 /* Excalibur */;
+			targetProxy = 46A968141BA0DF1E003AB227 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		46A968071BA0DF1E003AB227 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				46A968081BA0DF1E003AB227 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		46A9680C1BA0DF1E003AB227 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				46A9680D1BA0DF1E003AB227 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		46A9681B1BA0DF1E003AB227 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		46A9681C1BA0DF1E003AB227 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		46A9681E1BA0DF1E003AB227 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Excalibur/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		46A9681F1BA0DF1E003AB227 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Excalibur/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		46A968211BA0DF1E003AB227 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ExcaliburTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Excalibur.app/Excalibur";
+			};
+			name = Debug;
+		};
+		46A968221BA0DF1E003AB227 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ExcaliburTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Excalibur.app/Excalibur";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		46A967F61BA0DF1D003AB227 /* Build configuration list for PBXProject "Excalibur" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46A9681B1BA0DF1E003AB227 /* Debug */,
+				46A9681C1BA0DF1E003AB227 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46A9681D1BA0DF1E003AB227 /* Build configuration list for PBXNativeTarget "Excalibur" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46A9681E1BA0DF1E003AB227 /* Debug */,
+				46A9681F1BA0DF1E003AB227 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		46A968201BA0DF1E003AB227 /* Build configuration list for PBXNativeTarget "ExcaliburTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46A968211BA0DF1E003AB227 /* Debug */,
+				46A968221BA0DF1E003AB227 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		46A968021BA0DF1E003AB227 /* Excalibur.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				46A968031BA0DF1E003AB227 /* Excalibur.xcdatamodel */,
+			);
+			currentVersion = 46A968031BA0DF1E003AB227 /* Excalibur.xcdatamodel */;
+			path = Excalibur.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 46A967F31BA0DF1D003AB227 /* Project object */;
+}
