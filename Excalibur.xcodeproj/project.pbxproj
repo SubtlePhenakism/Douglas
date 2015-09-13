@@ -60,6 +60,8 @@
 		46A9680B1BA0DF1E003AB227 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46A9680A1BA0DF1E003AB227 /* Images.xcassets */; };
 		46A9680E1BA0DF1E003AB227 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46A9680C1BA0DF1E003AB227 /* LaunchScreen.xib */; };
 		46A9681A1BA0DF1E003AB227 /* ExcaliburTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A968191BA0DF1E003AB227 /* ExcaliburTests.swift */; };
+		46D4DC7B1BA514B800C4C9A0 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D4DC7A1BA514B800C4C9A0 /* TableViewController.swift */; };
+		46D4DC7F1BA51A2100C4C9A0 /* PropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D4DC7E1BA51A2100C4C9A0 /* PropertyCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +133,8 @@
 		46A968131BA0DF1E003AB227 /* ExcaliburTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExcaliburTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46A968181BA0DF1E003AB227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46A968191BA0DF1E003AB227 /* ExcaliburTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcaliburTests.swift; sourceTree = "<group>"; };
+		46D4DC7A1BA514B800C4C9A0 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		46D4DC7E1BA51A2100C4C9A0 /* PropertyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +248,8 @@
 				46A968001BA0DF1D003AB227 /* AppDelegate.swift */,
 				461A880E1BA2191F008BC8D3 /* LocalStore.swift */,
 				461A88071BA20262008BC8D3 /* HomeViewController.swift */,
+				46D4DC7A1BA514B800C4C9A0 /* TableViewController.swift */,
+				46D4DC7E1BA51A2100C4C9A0 /* PropertyCell.swift */,
 				461A880A1BA2171B008BC8D3 /* MenuViewController.swift */,
 				461A87E61BA17335008BC8D3 /* LoginViewController.swift */,
 				461A88101BA23A55008BC8D3 /* SettingsViewController.swift */,
@@ -394,6 +400,7 @@
 				4629280D1BA35955005B02EE /* DesignableTextView.swift in Sources */,
 				4629281C1BA35955005B02EE /* SpringView.swift in Sources */,
 				46A968011BA0DF1D003AB227 /* AppDelegate.swift in Sources */,
+				46D4DC7B1BA514B800C4C9A0 /* TableViewController.swift in Sources */,
 				4629281D1BA35955005B02EE /* TransitionManager.swift in Sources */,
 				462928141BA35955005B02EE /* Misc.swift in Sources */,
 				462928121BA35955005B02EE /* LoadingView.swift in Sources */,
@@ -414,6 +421,7 @@
 				462928061BA35955005B02EE /* BlurView.swift in Sources */,
 				462928111BA35955005B02EE /* KeyboardAvoidingScrollView.swift in Sources */,
 				4629280C1BA35955005B02EE /* DesignableTextField.swift in Sources */,
+				46D4DC7F1BA51A2100C4C9A0 /* PropertyCell.swift in Sources */,
 				4629281B1BA35955005B02EE /* SpringTextView.swift in Sources */,
 				461A87E91BA17355008BC8D3 /* SignUpViewController.swift in Sources */,
 				461A88111BA23A55008BC8D3 /* SettingsViewController.swift in Sources */,

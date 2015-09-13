@@ -9,24 +9,26 @@
 import UIKit
 import Parse
 import Bolts
+import ParseUI
 
 class HomeViewController: UIViewController {
     
     
-    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UIBarButtonItem!
+    //@IBOutlet weak var userNameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Show the current visitor's username
         if let pUserName = PFUser.currentUser()?["username"] as? String {
-            self.userNameLabel.text = "@" + pUserName
+            self.userNameLabel.title = "@" + pUserName
         }
         
-        let propertyQuery = PFQuery(className:"Property")
-        if let user = PFUser.currentUser() {
-            propertyQuery.whereKey("createdBy", equalTo: user)
-        }
+        //let propertyQuery = PFQuery(className:"Property")
+        //if let user = PFUser.currentUser() {
+        //    propertyQuery.whereKey("createdBy", equalTo: user)
+        //}
     }
     
     override func didReceiveMemoryWarning() {
