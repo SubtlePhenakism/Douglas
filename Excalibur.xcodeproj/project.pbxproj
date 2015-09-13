@@ -53,6 +53,7 @@
 		4629281D1BA35955005B02EE /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462928031BA35955005B02EE /* TransitionManager.swift */; };
 		4629281E1BA35955005B02EE /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462928041BA35955005B02EE /* TransitionZoom.swift */; };
 		4629281F1BA35955005B02EE /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462928051BA35955005B02EE /* UnwindSegue.swift */; };
+		462928211BA3B28E005B02EE /* AddUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462928201BA3B28E005B02EE /* AddUnitViewController.swift */; };
 		46A968011BA0DF1D003AB227 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A968001BA0DF1D003AB227 /* AppDelegate.swift */; };
 		46A968041BA0DF1E003AB227 /* Excalibur.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46A968021BA0DF1E003AB227 /* Excalibur.xcdatamodeld */; };
 		46A968091BA0DF1E003AB227 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46A968071BA0DF1E003AB227 /* Main.storyboard */; };
@@ -119,6 +120,7 @@
 		462928031BA35955005B02EE /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		462928041BA35955005B02EE /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		462928051BA35955005B02EE /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
+		462928201BA3B28E005B02EE /* AddUnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUnitViewController.swift; sourceTree = "<group>"; };
 		46A967FB1BA0DF1D003AB227 /* Excalibur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Excalibur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46A967FF1BA0DF1D003AB227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46A968001BA0DF1D003AB227 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				461A87E61BA17335008BC8D3 /* LoginViewController.swift */,
 				461A88101BA23A55008BC8D3 /* SettingsViewController.swift */,
 				461A87E81BA17355008BC8D3 /* SignUpViewController.swift */,
+				462928201BA3B28E005B02EE /* AddUnitViewController.swift */,
 				461A87EA1BA17371008BC8D3 /* ResetPasswordViewController.swift */,
 				46A968071BA0DF1E003AB227 /* Main.storyboard */,
 				46A9680A1BA0DF1E003AB227 /* Images.xcassets */,
@@ -387,6 +390,7 @@
 				4629280B1BA35955005B02EE /* DesignableTabBarController.swift in Sources */,
 				461A87E71BA17335008BC8D3 /* LoginViewController.swift in Sources */,
 				462928161BA35955005B02EE /* SpringAnimation.swift in Sources */,
+				462928211BA3B28E005B02EE /* AddUnitViewController.swift in Sources */,
 				4629280D1BA35955005B02EE /* DesignableTextView.swift in Sources */,
 				4629281C1BA35955005B02EE /* SpringView.swift in Sources */,
 				46A968011BA0DF1D003AB227 /* AppDelegate.swift in Sources */,

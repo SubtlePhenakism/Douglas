@@ -12,17 +12,6 @@ import Bolts
 
 class HomeViewController: UIViewController {
     
-    @IBAction func logOutAction(sender: AnyObject){
-        
-        // Send a request to log out a user
-        PFUser.logOut()
-        
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Login") as! UIViewController
-            self.presentViewController(viewController, animated: true, completion: nil)
-        })
-        
-    }
     
     @IBOutlet weak var userNameLabel: UILabel!
     
@@ -32,6 +21,11 @@ class HomeViewController: UIViewController {
         // Show the current visitor's username
         if let pUserName = PFUser.currentUser()?["username"] as? String {
             self.userNameLabel.text = "@" + pUserName
+        }
+        
+        let propertyQuery = PFQuery(className:"Property")
+        if let user = PFUser.currentUser() {
+            propertyQuery.whereKey("createdBy", equalTo: user)
         }
     }
     

@@ -192,7 +192,7 @@
         <!--Navigation Controller-->
         <scene sceneID="8Cd-fB-ZKQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YbI-3P-Ydk" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Nav" automaticallyAdjustsScrollViewInsets="NO" id="YbI-3P-Ydk" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nIa-Hn-4mn">
@@ -419,17 +419,18 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jaA-ha-o2Z">
-                                        <rect key="frame" x="107" y="262" width="57" height="43"/>
+                                        <rect key="frame" x="95" y="262" width="81" height="43"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="57" id="MAm-Mg-CtX"/>
+                                            <constraint firstAttribute="width" constant="81" id="MAm-Mg-CtX"/>
                                             <constraint firstAttribute="height" constant="43" id="f5H-6h-Mnx"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
-                                        <state key="normal" title="Next">
+                                        <state key="normal" title="Sign Up">
                                             <color key="titleColor" red="0.23921568630000001" green="0.25490196079999999" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="signUpAction:" destination="2M3-v3-1bR" eventType="touchUpInside" id="fjM-Nz-WEl"/>
                                             <segue destination="UWt-IN-ONL" kind="presentation" id="GMe-Bz-r1H"/>
                                         </connections>
                                     </button>
@@ -463,6 +464,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="RCu-xw-Gcx"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="emailField" destination="Tv1-Gm-R46" id="viW-fF-3i8"/>
+                        <outlet property="passwordField" destination="T9X-Bc-CCc" id="0kb-s6-cKA"/>
+                        <outlet property="usernameField" destination="KSM-bo-X3n" id="QiU-Sc-Ohi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TYp-0n-O4U" sceneMemberID="firstResponder"/>
                 <exit id="kCp-vr-RyK" userLabel="Exit" sceneMemberID="exit"/>
@@ -566,10 +572,10 @@
             </objects>
             <point key="canvasLocation" x="555" y="-521"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--Add Unit View Controller-->
         <scene sceneID="a2K-pT-Gq8">
             <objects>
-                <viewController id="UWt-IN-ONL" customClass="SignUpViewController" customModule="Excalibur" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addUnit" id="UWt-IN-ONL" customClass="AddUnitViewController" customModule="Excalibur" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hyW-kL-8Jv"/>
                         <viewControllerLayoutGuide type="bottom" id="4Ku-YU-0xR"/>
@@ -600,7 +606,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address 1" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bnI-bu-9V0">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bnI-bu-9V0">
                                         <rect key="frame" x="13" y="63" width="245" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="245" id="jle-ug-F00"/>
@@ -609,7 +615,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address 2" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uNH-PG-IJc">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uNH-PG-IJc">
                                         <rect key="frame" x="13" y="114" width="245" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="245" id="9jO-vH-Ula"/>
@@ -646,18 +652,19 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgQ-mh-le7">
-                                        <rect key="frame" x="95" y="282" width="81" height="43"/>
+                                        <rect key="frame" x="89" y="282" width="91" height="43"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="81" id="MaT-oe-PjQ"/>
+                                            <constraint firstAttribute="width" constant="91" id="MaT-oe-PjQ"/>
                                             <constraint firstAttribute="height" constant="43" id="TTa-xz-14O"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
-                                        <state key="normal" title="Sign Up">
+                                        <state key="normal" title="Add Unit">
                                             <color key="titleColor" red="0.23921568630000001" green="0.25490196079999999" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="signUpAction:" destination="UWt-IN-ONL" eventType="touchUpInside" id="ttt-07-gFt"/>
+                                            <action selector="addUnitAction:" destination="UWt-IN-ONL" eventType="touchUpInside" id="Kl8-Uj-vWe"/>
+                                            <segue destination="YbI-3P-Ydk" kind="presentation" id="vYb-7P-WfM"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -702,6 +709,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="Doa-0G-qhQ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="addressField" destination="uNH-PG-IJc" id="36u-SR-dMe"/>
+                        <outlet property="cityField" destination="Z5j-l6-9vV" id="9Kn-B9-BCk"/>
+                        <outlet property="stateField" destination="Son-x9-WkP" id="a1T-WQ-wHf"/>
+                        <outlet property="titleField" destination="bnI-bu-9V0" id="Fm7-fg-Zn9"/>
+                        <outlet property="zipField" destination="CNC-pA-iWS" id="BKj-xV-zro"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LJJ-5B-w2q" sceneMemberID="firstResponder"/>
                 <exit id="KwU-xE-gjv" userLabel="Exit" sceneMemberID="exit"/>
@@ -809,4 +823,7 @@
         <image name="spanner3" width="512" height="512"/>
         <image name="star51" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="vYb-7P-WfM"/>
+    </inferredMetricsTieBreakers>
 </document>
