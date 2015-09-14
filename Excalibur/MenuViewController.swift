@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
+import Bolts
+
 protocol MenuViewControllerDelegate: class {
     func menuViewControllerDidTouchTop(controller: MenuViewController)
     func menuViewControllerDidTouchRecent(controller: MenuViewController)

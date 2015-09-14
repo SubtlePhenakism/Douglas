@@ -15,6 +15,13 @@ class TableViewController: PFQueryTableViewController {
     
     @IBOutlet weak var userNameLabel: UIBarButtonItem!
     
+    @IBAction func add(sender: AnyObject) {
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.performSegueWithIdentifier("TableViewToDetailView", sender: self)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,6 +45,7 @@ class TableViewController: PFQueryTableViewController {
             })
         }
     }
+    
     
     // Initialise the PFQueryTable tableview
     override init(style: UITableViewStyle, className: String!) {
@@ -64,25 +72,25 @@ class TableViewController: PFQueryTableViewController {
     //override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell {
         
-        var cell = tableView.dequeueReusableCellWithIdentifier("PropertyCell") as! PropertyCell!
+        var cell = tableView.dequeueReusableCellWithIdentifier("PropertyCell") as! PropertyTableViewCell!
         if cell == nil {
-            cell = PropertyCell(style: UITableViewCellStyle.Default, reuseIdentifier: "PropertyCell")
+            cell = PropertyTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "PropertyCell")
         }
         
         // Extract values from the PFObject to display in the table cell
         if let title = object?["title"] as? String {
-            cell?.propertyTitle?.text = title
+            cell.propertyTitle?.text = title
         }
         if let address = object?["address"] as? String {
-            cell?.propertyAddress?.text = address
+            cell.propertyAddress?.text = address
         }
         
         // Display flag image
         var initialThumbnail = UIImage(named: "question")
         cell?.propertyImage?.image = initialThumbnail
         if let thumbnail = object?["flag"] as? PFFile {
-            cell?.propertyImage?.file = thumbnail
-            cell?.propertyImage?.loadInBackground()
+            cell.propertyImage?.file = thumbnail
+            cell.propertyImage?.loadInBackground()
         }
         
         return cell
@@ -101,10 +109,37 @@ class TableViewController: PFQueryTableViewController {
         }
     }
     
+    
+    
     override func viewDidAppear(animated: Bool) {
         
         // Refresh the table to ensure any data changes are displayed
         tableView.reloadData()
     }
-   
+    
+    // Override to support conditional editing of the table view.
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return NO if you do not want the specified item to be editable.
+        return true
+    }
+    
+    
+    // Override to support editing the table view.
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            // Delete the row from the data source
+            let objectToDelete = objects?[indexPath.row] as! PFObject
+            objectToDelete.deleteInBackgroundWithBlock {
+                (success: Bool, error: NSError?) -> Void in
+                if (success) {
+                    // Force a reload of the table - fetching fresh data from Parse platform
+                    self.loadObjects()
+                } else {
+                    // There was a problem, check error.description
+                }
+            }
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
 }

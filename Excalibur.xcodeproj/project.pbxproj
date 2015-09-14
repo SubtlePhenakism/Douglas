@@ -54,6 +54,8 @@
 		4629281E1BA35955005B02EE /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462928041BA35955005B02EE /* TransitionZoom.swift */; };
 		4629281F1BA35955005B02EE /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462928051BA35955005B02EE /* UnwindSegue.swift */; };
 		462928211BA3B28E005B02EE /* AddUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462928201BA3B28E005B02EE /* AddUnitViewController.swift */; };
+		46A479171BA6222B00F88E0B /* PropertyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A479161BA6222B00F88E0B /* PropertyTableViewCell.swift */; };
+		46A479191BA6248D00F88E0B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A479181BA6248D00F88E0B /* DetailViewController.swift */; };
 		46A968011BA0DF1D003AB227 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A968001BA0DF1D003AB227 /* AppDelegate.swift */; };
 		46A968041BA0DF1E003AB227 /* Excalibur.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46A968021BA0DF1E003AB227 /* Excalibur.xcdatamodeld */; };
 		46A968091BA0DF1E003AB227 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46A968071BA0DF1E003AB227 /* Main.storyboard */; };
@@ -61,7 +63,6 @@
 		46A9680E1BA0DF1E003AB227 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46A9680C1BA0DF1E003AB227 /* LaunchScreen.xib */; };
 		46A9681A1BA0DF1E003AB227 /* ExcaliburTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A968191BA0DF1E003AB227 /* ExcaliburTests.swift */; };
 		46D4DC7B1BA514B800C4C9A0 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D4DC7A1BA514B800C4C9A0 /* TableViewController.swift */; };
-		46D4DC7F1BA51A2100C4C9A0 /* PropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D4DC7E1BA51A2100C4C9A0 /* PropertyCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,8 @@
 		462928041BA35955005B02EE /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		462928051BA35955005B02EE /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
 		462928201BA3B28E005B02EE /* AddUnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUnitViewController.swift; sourceTree = "<group>"; };
+		46A479161BA6222B00F88E0B /* PropertyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyTableViewCell.swift; sourceTree = "<group>"; };
+		46A479181BA6248D00F88E0B /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		46A967FB1BA0DF1D003AB227 /* Excalibur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Excalibur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46A967FF1BA0DF1D003AB227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46A968001BA0DF1D003AB227 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,7 +137,6 @@
 		46A968181BA0DF1E003AB227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46A968191BA0DF1E003AB227 /* ExcaliburTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcaliburTests.swift; sourceTree = "<group>"; };
 		46D4DC7A1BA514B800C4C9A0 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		46D4DC7E1BA51A2100C4C9A0 /* PropertyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,7 +251,8 @@
 				461A880E1BA2191F008BC8D3 /* LocalStore.swift */,
 				461A88071BA20262008BC8D3 /* HomeViewController.swift */,
 				46D4DC7A1BA514B800C4C9A0 /* TableViewController.swift */,
-				46D4DC7E1BA51A2100C4C9A0 /* PropertyCell.swift */,
+				46A479161BA6222B00F88E0B /* PropertyTableViewCell.swift */,
+				46A479181BA6248D00F88E0B /* DetailViewController.swift */,
 				461A880A1BA2171B008BC8D3 /* MenuViewController.swift */,
 				461A87E61BA17335008BC8D3 /* LoginViewController.swift */,
 				461A88101BA23A55008BC8D3 /* SettingsViewController.swift */,
@@ -421,10 +424,11 @@
 				462928061BA35955005B02EE /* BlurView.swift in Sources */,
 				462928111BA35955005B02EE /* KeyboardAvoidingScrollView.swift in Sources */,
 				4629280C1BA35955005B02EE /* DesignableTextField.swift in Sources */,
-				46D4DC7F1BA51A2100C4C9A0 /* PropertyCell.swift in Sources */,
+				46A479191BA6248D00F88E0B /* DetailViewController.swift in Sources */,
 				4629281B1BA35955005B02EE /* SpringTextView.swift in Sources */,
 				461A87E91BA17355008BC8D3 /* SignUpViewController.swift in Sources */,
 				461A88111BA23A55008BC8D3 /* SettingsViewController.swift in Sources */,
+				46A479171BA6222B00F88E0B /* PropertyTableViewCell.swift in Sources */,
 				4629280A1BA35955005B02EE /* DesignableLabel.swift in Sources */,
 				462928081BA35955005B02EE /* DesignableButton.swift in Sources */,
 				4629281E1BA35955005B02EE /* TransitionZoom.swift in Sources */,
