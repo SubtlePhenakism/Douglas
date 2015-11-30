@@ -13,6 +13,9 @@ import ParseUI
 
 class TableViewController: PFQueryTableViewController {
     
+    var nameVar = ""
+    
+    
     @IBOutlet weak var userNameLabel: UIBarButtonItem!
     
     @IBAction func add(sender: AnyObject) {
@@ -65,17 +68,23 @@ class TableViewController: PFQueryTableViewController {
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
         var query = PFQuery(className: "Property")
-        query.orderByAscending("title")
+        //query.orderByAscending("title")
+        query.includeKey("currentContract")
+        query.includeKey("username")
+        query.includeKey("currentTenant")
+        query.whereKey("owner", equalTo: PFUser.currentUser()!)
         return query
     }
     
     //override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell {
         
+        
         var cell = tableView.dequeueReusableCellWithIdentifier("PropertyCell") as! PropertyTableViewCell!
         if cell == nil {
             cell = PropertyTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "PropertyCell")
         }
+        
         
         // Extract values from the PFObject to display in the table cell
         if let title = object?["title"] as? String {
@@ -85,13 +94,48 @@ class TableViewController: PFQueryTableViewController {
             cell.propertyAddress?.text = address
         }
         
-        // Display flag image
-        var initialThumbnail = UIImage(named: "question")
-        cell?.propertyImage?.image = initialThumbnail
-        if let thumbnail = object?["flag"] as? PFFile {
-            cell.propertyImage?.file = thumbnail
+        if let image = object?["image"] as? PFFile {
+            cell.propertyImage?.file = image
             cell.propertyImage?.loadInBackground()
         }
+        var name = ""
+        if let contract = object?["currentContract"] as? PFObject {
+            println(contract["lessee"])
+            println(object?["currentTenant"])
+            if let lessee = contract["lessee"] as? PFUser {
+                println(lessee.objectId)
+                let usernameQuery = PFQuery.getUserObjectWithId(lessee.objectId!)
+                let tenantUsername = usernameQuery?.username
+                println(tenantUsername)
+                name = (tenantUsername as String?)!
+                
+            }
+            println()
+        }
+        println(name)
+        nameVar = (name as String?)!
+        
+//        if let contract = object?["currentContract"] as? PFObject {
+//            var lessee = contract["lessee"] as! PFUser
+//            println(lessee)
+//                //var username = String?
+//                let usernameQ = PFUser.query()
+//                usernameQ?.whereKey("objectId", equalTo: lessee.objectId!)
+//                usernameQ?.includeKey("username")
+//            usernameQ?.findObjectsInBackgroundWithBlock({ ([NSObject :AnyObject]?, error:NSError) -> Void in
+//                    if let username = items["username"] as? String {
+//                    println(username)
+//                }
+//                })
+//            }
+        
+        // Display flag image
+        //var initialThumbnail = UIImage(named: "question")
+        //cell?.propertyImage?.image = initialThumbnail
+        //if let thumbnail = object?["image"] as? PFFile {
+        //    cell.propertyImage?.file = thumbnail
+        //    cell.propertyImage?.loadInBackground()
+        //}
         
         return cell
     }
@@ -100,13 +144,15 @@ class TableViewController: PFQueryTableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         // Get the new view controller using [segue destinationViewController].
-        if (segue.identifier == "detailIdentifier") {
+        if (segue.identifier! == "TableViewToDetailView") {
         let detailScene = segue.destinationViewController as! DetailViewController
-        
         // Pass the selected object to the destination view controller.
         if let indexPath = self.tableView.indexPathForSelectedRow() {
             let row = Int(indexPath.row)
-            detailScene.currentObject = objects?[row] as? PFObject
+            detailScene.currentObject = objects?[row] as? PFObject!
+            detailScene.tName = nameVar
+            println("check")
+            println(nameVar)
         }
         } else if (segue.identifier == "menuSegue") {
             let menuScene = segue.destinationViewController as! MenuViewController

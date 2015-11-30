@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import Bolts
+import ParseUI
 
 class AddUnitViewController: UIViewController {
     
@@ -18,7 +19,70 @@ class AddUnitViewController: UIViewController {
     @IBOutlet weak var stateField: UITextField!
     @IBOutlet weak var zipField: UITextField!
     
+    @IBOutlet weak var imageToUpload: UIImageView!
+    //@IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
+    
+    var code: String?
+    
+    @IBAction func selectPicturePressed(sender: AnyObject) {
+        //Open a UIImagePickerController to select the picture
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func savePressed(sender: AnyObject) {
+        
+        //Disable the save button until we are ready
+        navigationItem.rightBarButtonItem?.enabled = false
+        
+        loadingSpinner.startAnimating()
+        
+        //TODO: Upload a new picture
+        let pictureData = UIImagePNGRepresentation(imageToUpload.image)
+        
+        //Upload a new picture
+        //1
+        let file = PFFile(name: "image", data: pictureData)
+        file.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
+            if succeeded {
+                //2
+                self.savePropertyInfo(file)
+            } else if let error = error {
+                //3
+                self.showErrorView(error)
+            }
+            }, progressBlock: { percent in
+                //4
+                println("Uploaded: \(percent)%")
+        })
+    }
+    
+    func savePropertyInfo(file: PFFile)
+    {
+        //1
+        let propertyInfo = PropertyInfo(image: file, user: PFUser.currentUser()!)
+        //2
+        propertyInfo.saveInBackgroundWithBlock{ succeeded, error in
+            if succeeded {
+                //3
+                self.navigationController?.popViewControllerAnimated(true)
+            } else {
+                //4
+                if let errorMessage = error?.userInfo?["error"] as? String {
+                    self.showErrorView(error!)
+                }
+            }
+        }
+    }
+    
+    
+    
     @IBAction func addUnitAction(sender: AnyObject) {
+        
+        let pictureData = UIImagePNGRepresentation(imageToUpload.image)
         
         var property = PFObject(className:"Property")
         property["title"] = self.titleField.text
@@ -27,6 +91,10 @@ class AddUnitViewController: UIViewController {
         property["state"] = self.stateField.text
         property["zip"] = self.zipField.text
         property["owner"] = PFUser.currentUser()
+        property["image"] = PFFile(name: "image", data: pictureData)
+        var title = self.titleField.text
+        code = title.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        property["tenantCode"] = code
         
         if count(self.cityField.text) < 1 {
             var alert = UIAlertView(title: "Invalid", message: "Please enter your city", delegate: self, cancelButtonTitle: "OK")
@@ -78,20 +146,15 @@ class AddUnitViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+extension AddUnitViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        //Place the image in the imageview
+        imageToUpload.image = image
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+

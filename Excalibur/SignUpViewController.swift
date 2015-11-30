@@ -47,8 +47,17 @@ class SignUpViewController: UIViewController {
             newUser.password = password
             newUser.email = finalEmail
             
+            //for newUser in usersToAddToRole {
+                //role.users.addObject(newUser)
+            //}
+            
             // Sign up the user asynchronously
             newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
+                
+                //var roleQuery = PFRole.query()
+                //roleQuery?.whereKey("name", equalTo:"Landlord")
+                
+            
                 
                 // Stop the spinner
                 spinner.stopAnimating()
