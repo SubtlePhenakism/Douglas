@@ -22,6 +22,7 @@ class SignUpViewController: UIViewController {
         var password = self.passwordField.text
         var email = self.emailField.text
         var finalEmail = email.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        var userRole = "Landlord"
         
         // Validate the text fields
         if count(username) < 5 {
@@ -46,6 +47,7 @@ class SignUpViewController: UIViewController {
             newUser.username = username
             newUser.password = password
             newUser.email = finalEmail
+            newUser.setValue(userRole, forKey:"userRole")
             
             //for newUser in usersToAddToRole {
                 //role.users.addObject(newUser)

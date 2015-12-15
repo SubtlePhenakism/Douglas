@@ -15,13 +15,13 @@ class RequestTableViewController: PFQueryTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTableView()
+        //configureTableView()
     }
     
-    func configureTableView() {
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 75.0
-    }
+//    func configureTableView() {
+//        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.estimatedRowHeight = 75.0
+//    }
 
     // Initialise the PFQueryTable tableview
     override init(style: UITableViewStyle, className: String!) {
@@ -33,7 +33,7 @@ class RequestTableViewController: PFQueryTableViewController {
         
         // Configure the PFQueryTableView
         self.parseClassName = "Request"
-        self.textKey = "requestTitle"
+        self.textKey = "subject"
         self.pullToRefreshEnabled = true
         self.paginationEnabled = false
     }
@@ -41,8 +41,10 @@ class RequestTableViewController: PFQueryTableViewController {
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
         var query = PFQuery(className: "Request")
-        query.includeKey("Property")
-        query.orderByAscending("requestTitle")
+        query.includeKey("location")
+        query.includeKey("sender")
+        query.orderByDescending("createdAt")
+        query.whereKey("receiver", equalTo: PFUser.currentUser()!)
         return query
     }
     
@@ -55,23 +57,23 @@ class RequestTableViewController: PFQueryTableViewController {
         }
         
         // Extract values from the PFObject to display in the table cell
-        if let propertyTitle = object?["propertyTitle"] as? String {
-            cell.propertyTitle?.text = propertyTitle
+        if let propertyTitle = object?["location"] as? PFObject {
+            cell.propertyTitle?.text = propertyTitle["address"] as? String
         }
-        if let propertyAddress = object?["propertyAddress"] as? String {
-            cell.propertyAddress?.text = propertyAddress
+        if let requestSender = object?["sender"] as? PFUser {
+            cell.senderName.text = requestSender.username
         }
-        if let requestTitle = object?["requestTitle"] as? String {
+        if let requestTitle = object?["subject"] as? String {
             cell.requestTitle?.text = requestTitle
         }
-        if let requestStatus = object?["requestStatus"] as? String {
+        if let requestStatus = object?["status"] as? String {
             cell.requestStatus?.text = requestStatus
         }
         
         // Display flag image
         var initialThumbnail = UIImage(named: "question")
         cell?.requestImage?.image = initialThumbnail
-        if let thumbnail = object?["flag"] as? PFFile {
+        if let thumbnail = object?["image"] as? PFFile {
             cell.requestImage?.file = thumbnail
             cell.requestImage?.loadInBackground()
         }

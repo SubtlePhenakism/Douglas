@@ -17,7 +17,7 @@ class RequestTableViewCell: PFTableViewCell {
     @IBOutlet weak var requestStatus: UILabel!
     @IBOutlet weak var requestImage: PFImageView!
     @IBOutlet weak var propertyTitle: UILabel!
-    @IBOutlet weak var propertyAddress: UILabel!
     @IBOutlet weak var statusIcon: UIImageView!
+    @IBOutlet weak var senderName: UILabel!
 
 }

@@ -64,6 +64,8 @@
 		464432451BB4A14600B134D4 /* PropertyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464432441BB4A14600B134D4 /* PropertyInfo.swift */; };
 		464432471BB4C9E800B134D4 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464432461BB4C9E800B134D4 /* UIViewControllerExtension.swift */; };
 		464545771C0CF8A00019AE2B /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464545761C0CF8A00019AE2B /* ContactDetailViewController.swift */; };
+		464545791C0D11780019AE2B /* MessageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464545781C0D11780019AE2B /* MessageInfo.swift */; };
+		4645457B1C0D13360019AE2B /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4645457A1C0D13360019AE2B /* MessageTableViewCell.swift */; };
 		46848F081BAE132C001CA8AB /* RequestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46848F071BAE132C001CA8AB /* RequestTableViewController.swift */; };
 		46848F0A1BAE14F9001CA8AB /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46848F091BAE14F9001CA8AB /* RequestTableViewCell.swift */; };
 		46A479171BA6222B00F88E0B /* PropertyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A479161BA6222B00F88E0B /* PropertyTableViewCell.swift */; };
@@ -147,6 +149,8 @@
 		464432441BB4A14600B134D4 /* PropertyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyInfo.swift; sourceTree = "<group>"; };
 		464432461BB4C9E800B134D4 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		464545761C0CF8A00019AE2B /* ContactDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
+		464545781C0D11780019AE2B /* MessageInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageInfo.swift; sourceTree = "<group>"; };
+		4645457A1C0D13360019AE2B /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		46848F071BAE132C001CA8AB /* RequestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTableViewController.swift; sourceTree = "<group>"; };
 		46848F091BAE14F9001CA8AB /* RequestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTableViewCell.swift; sourceTree = "<group>"; };
 		46A479161BA6222B00F88E0B /* PropertyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyTableViewCell.swift; sourceTree = "<group>"; };
@@ -277,12 +281,14 @@
 				461A880E1BA2191F008BC8D3 /* LocalStore.swift */,
 				464432441BB4A14600B134D4 /* PropertyInfo.swift */,
 				46375DD71BDB044A00482036 /* ContactInfo.swift */,
+				464545781C0D11780019AE2B /* MessageInfo.swift */,
 				461A88071BA20262008BC8D3 /* HomeViewController.swift */,
 				46D4DC7A1BA514B800C4C9A0 /* TableViewController.swift */,
 				46A479161BA6222B00F88E0B /* PropertyTableViewCell.swift */,
 				46848F071BAE132C001CA8AB /* RequestTableViewController.swift */,
 				4639F7AA1BD7142E00478AD7 /* ContactTableViewController.swift */,
 				4639F7A81BD7019A00478AD7 /* ContactTableViewCell.swift */,
+				4645457A1C0D13360019AE2B /* MessageTableViewCell.swift */,
 				46848F091BAE14F9001CA8AB /* RequestTableViewCell.swift */,
 				46A479181BA6248D00F88E0B /* DetailViewController.swift */,
 				464545761C0CF8A00019AE2B /* ContactDetailViewController.swift */,
@@ -467,6 +473,7 @@
 				46A968041BA0DF1E003AB227 /* Excalibur.xcdatamodeld in Sources */,
 				46848F0A1BAE14F9001CA8AB /* RequestTableViewCell.swift in Sources */,
 				46375DE01BE16E6000482036 /* ProfileImageCollectionViewController.swift in Sources */,
+				4645457B1C0D13360019AE2B /* MessageTableViewCell.swift in Sources */,
 				464432471BB4C9E800B134D4 /* UIViewControllerExtension.swift in Sources */,
 				461A88081BA20262008BC8D3 /* HomeViewController.swift in Sources */,
 				46848F081BAE132C001CA8AB /* RequestTableViewController.swift in Sources */,
@@ -475,6 +482,7 @@
 				462928061BA35955005B02EE /* BlurView.swift in Sources */,
 				462928111BA35955005B02EE /* KeyboardAvoidingScrollView.swift in Sources */,
 				4629280C1BA35955005B02EE /* DesignableTextField.swift in Sources */,
+				464545791C0D11780019AE2B /* MessageInfo.swift in Sources */,
 				46A479191BA6248D00F88E0B /* DetailViewController.swift in Sources */,
 				4629281B1BA35955005B02EE /* SpringTextView.swift in Sources */,
 				461A87E91BA17355008BC8D3 /* SignUpViewController.swift in Sources */,
