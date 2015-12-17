@@ -94,6 +94,7 @@ class TableViewController: PFQueryTableViewController {
             cell.propertyAddress?.text = address
         }
         
+        cell.propertyImage.image = UIImage(named: "home60")
         if let image = object?["image"] as? PFFile {
             cell.propertyImage?.file = image
             cell.propertyImage?.loadInBackground()

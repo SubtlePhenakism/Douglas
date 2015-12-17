@@ -13,9 +13,30 @@ import Bolts
 
 class RequestTableViewController: PFQueryTableViewController {
     
+    @IBOutlet weak var usernameLabel: UIBarButtonItem!
+    //var pfUserImage : PFImageView
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //configureTableView()
+        
+        if let currentUser = PFUser.currentUser() {
+            self.usernameLabel.title = currentUser.username
+//            if let userImageFile = currentUser["image"] as? PFFile {
+//                userImageFile.getDataInBackgroundWithBlock({ (imageData: NSData!, error: NSError?) -> Void in
+//                    if (error == nil) {
+//                        let image = UIImage(data:imageData)
+//                        self.usernameLabel.image = image
+//                    } else {
+//                        println("error")
+//                    }
+//                })
+                //self.userImage.file = userImageFile
+                //self.userImage.loadInBackground()
+            //}
+           // self.usernameLabel.image = self.userImage
+            
+        }
     }
     
 //    func configureTableView() {

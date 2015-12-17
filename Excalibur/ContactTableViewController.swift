@@ -13,8 +13,14 @@ import Bolts
 
 class ContactTableViewController: PFQueryTableViewController {
 
+    @IBOutlet weak var usernameLabel: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let currentUser = PFUser.currentUser() {
+            self.usernameLabel.title = currentUser.username
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -46,6 +52,8 @@ class ContactTableViewController: PFQueryTableViewController {
         if let image = object?["image"] as? PFFile {
             cell.contactImage?.file = image
             cell.contactImage?.loadInBackground()
+        } else {
+            cell.contactImage.image = UIImage(named: "dodo")
         }
         
 

@@ -1608,11 +1608,17 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.27843137254901962" green="0.59999999999999998" blue="0.43529411764705883" alpha="0.050000000000000003" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDj-LQ-Yxs">
+                                <rect key="frame" x="0.0" y="195" width="414" height="521"/>
+                                <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="f4f-rW-toe">
-                                        <rect key="frame" x="0.0" y="225" width="414" height="447"/>
+                                        <rect key="frame" x="15" y="0.0" width="384" height="521"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="447" id="U5F-HY-fL1"/>
+                                            <constraint firstAttribute="height" constant="521" id="U5F-HY-fL1"/>
                                         </constraints>
                                         <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <prototypes>
@@ -1653,11 +1659,12 @@
                                         </connections>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.27843137254901962" green="0.59999999999999998" blue="0.43529411764705883" alpha="0.050000000000000003" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="f4f-rW-toe" secondAttribute="trailing" id="R8m-XN-Zyb"/>
-                                    <constraint firstItem="f4f-rW-toe" firstAttribute="leading" secondItem="7Bf-DL-2AD" secondAttribute="leading" id="boP-Pd-uNO"/>
-                                    <constraint firstAttribute="bottom" secondItem="f4f-rW-toe" secondAttribute="bottom" id="ykj-Na-JlK"/>
+                                    <constraint firstAttribute="trailing" secondItem="f4f-rW-toe" secondAttribute="trailing" constant="15" id="Gnv-lq-qKP"/>
+                                    <constraint firstAttribute="bottom" secondItem="f4f-rW-toe" secondAttribute="bottom" id="Mne-uI-vZU"/>
+                                    <constraint firstItem="f4f-rW-toe" firstAttribute="top" secondItem="PDj-LQ-Yxs" secondAttribute="top" id="cq4-XZ-EOg"/>
+                                    <constraint firstItem="f4f-rW-toe" firstAttribute="leading" secondItem="PDj-LQ-Yxs" secondAttribute="leading" constant="15" id="snV-TI-hqw"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rez-z7-gff">
@@ -1695,8 +1702,12 @@
                             <constraint firstItem="Rez-z7-gff" firstAttribute="leading" secondItem="g31-tn-5lk" secondAttribute="leading" id="DfS-uP-gfs"/>
                             <constraint firstItem="7Bf-DL-2AD" firstAttribute="top" secondItem="3cn-VQ-bjl" secondAttribute="bottom" id="GJD-NT-lhl"/>
                             <constraint firstAttribute="bottom" secondItem="Rez-z7-gff" secondAttribute="bottom" id="Igq-zD-9nC"/>
+                            <constraint firstItem="Yb8-Gm-fqA" firstAttribute="top" secondItem="PDj-LQ-Yxs" secondAttribute="bottom" constant="20" id="UlL-7f-J3T"/>
+                            <constraint firstItem="PDj-LQ-Yxs" firstAttribute="leading" secondItem="g31-tn-5lk" secondAttribute="leading" id="V2y-9t-4XJ"/>
                             <constraint firstAttribute="bottom" secondItem="Rez-z7-gff" secondAttribute="bottom" id="ZZI-SU-V1h"/>
+                            <constraint firstAttribute="trailing" secondItem="PDj-LQ-Yxs" secondAttribute="trailing" id="cXG-i0-cAV"/>
                             <constraint firstAttribute="trailing" secondItem="7Bf-DL-2AD" secondAttribute="trailing" id="lGz-aH-Vhs"/>
+                            <constraint firstItem="PDj-LQ-Yxs" firstAttribute="top" secondItem="3cn-VQ-bjl" secondAttribute="bottom" constant="131" id="sjl-Go-lLM"/>
                             <constraint firstItem="Yb8-Gm-fqA" firstAttribute="top" secondItem="7Bf-DL-2AD" secondAttribute="bottom" id="uBO-dw-0R3"/>
                         </constraints>
                         <variation key="default">
@@ -1792,11 +1803,14 @@
                                 <segue destination="UXC-lN-Wvd" kind="presentation" identifier="menuSegue" modalPresentationStyle="overCurrentContext" id="dEE-wo-Jxc"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Username" id="cz4-Ga-tI7">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="cz4-Ga-tI7">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="usernameLabel" destination="cz4-Ga-tI7" id="ogX-xL-CsL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cfY-qo-9oy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1957,6 +1971,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="usernameLabel" destination="n1B-kV-Ybx" id="LCP-tS-WWL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6j-81-4Sr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1992,9 +2009,9 @@
         <image name="star51" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="we6-yK-Xno"/>
-        <segue reference="CEy-hP-xmL"/>
-        <segue reference="e0Y-3n-PnD"/>
         <segue reference="BnG-ha-17p"/>
+        <segue reference="e0Y-3n-PnD"/>
+        <segue reference="dEE-wo-Jxc"/>
+        <segue reference="we6-yK-Xno"/>
     </inferredMetricsTieBreakers>
 </document>
