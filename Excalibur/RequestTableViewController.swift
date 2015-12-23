@@ -107,6 +107,23 @@ class RequestTableViewController: PFQueryTableViewController {
         // Refresh the table to ensure any data changes are displayed
         tableView.reloadData()
     }
+    
+    // MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        // Get the new view controller using [segue destinationViewController].
+        if (segue.identifier! == "RequestViewToDetailView") {
+            let detailScene = segue.destinationViewController as! RequestDetailViewController
+            // Pass the selected object to the destination view controller.
+            if let indexPath = self.tableView.indexPathForSelectedRow() {
+                let row = Int(indexPath.row)
+                detailScene.currentObject = objects?[row] as? PFObject!
+            }
+        } else if (segue.identifier == "menuSegue") {
+            let menuScene = segue.destinationViewController as! MenuViewController
+        }
+    }
 
 
 }

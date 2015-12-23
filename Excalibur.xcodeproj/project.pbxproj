@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		460423FE1C23401800973E94 /* RequestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460423FD1C23401800973E94 /* RequestDetailViewController.swift */; };
 		461A87E71BA17335008BC8D3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461A87E61BA17335008BC8D3 /* LoginViewController.swift */; };
 		461A87E91BA17355008BC8D3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461A87E81BA17355008BC8D3 /* SignUpViewController.swift */; };
 		461A87EB1BA17371008BC8D3 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461A87EA1BA17371008BC8D3 /* ResetPasswordViewController.swift */; };
@@ -23,7 +24,6 @@
 		461A88031BA2012E008BC8D3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461A87F91BA2012E008BC8D3 /* Security.framework */; };
 		461A88041BA2012E008BC8D3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461A87FA1BA2012E008BC8D3 /* StoreKit.framework */; };
 		461A88051BA2012E008BC8D3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461A87FB1BA2012E008BC8D3 /* SystemConfiguration.framework */; };
-		461A88081BA20262008BC8D3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461A88071BA20262008BC8D3 /* HomeViewController.swift */; };
 		461A880B1BA2171B008BC8D3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461A880A1BA2171B008BC8D3 /* MenuViewController.swift */; };
 		461A880F1BA2191F008BC8D3 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461A880E1BA2191F008BC8D3 /* LocalStore.swift */; };
 		461A88111BA23A55008BC8D3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461A88101BA23A55008BC8D3 /* SettingsViewController.swift */; };
@@ -91,6 +91,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		460423FD1C23401800973E94 /* RequestDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestDetailViewController.swift; sourceTree = "<group>"; };
 		461A87E61BA17335008BC8D3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		461A87E81BA17355008BC8D3 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		461A87EA1BA17371008BC8D3 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +108,6 @@
 		461A87F91BA2012E008BC8D3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		461A87FA1BA2012E008BC8D3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		461A87FB1BA2012E008BC8D3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		461A88071BA20262008BC8D3 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		461A880A1BA2171B008BC8D3 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		461A880E1BA2191F008BC8D3 /* LocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 		461A88101BA23A55008BC8D3 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +200,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		460423FF1C23458700973E94 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				46375DD71BDB044A00482036 /* ContactInfo.swift */,
+				4639F7AA1BD7142E00478AD7 /* ContactTableViewController.swift */,
+				4639F7A81BD7019A00478AD7 /* ContactTableViewCell.swift */,
+				464545761C0CF8A00019AE2B /* ContactDetailViewController.swift */,
+				4645457A1C0D13360019AE2B /* MessageTableViewCell.swift */,
+				464545781C0D11780019AE2B /* MessageInfo.swift */,
+			);
+			name = Contacts;
+			sourceTree = "<group>";
+		};
+		460424001C2345D200973E94 /* Property */ = {
+			isa = PBXGroup;
+			children = (
+				464432441BB4A14600B134D4 /* PropertyInfo.swift */,
+				46D4DC7A1BA514B800C4C9A0 /* TableViewController.swift */,
+				46A479161BA6222B00F88E0B /* PropertyTableViewCell.swift */,
+				46A479181BA6248D00F88E0B /* DetailViewController.swift */,
+			);
+			name = Property;
+			sourceTree = "<group>";
+		};
+		460424011C2345F600973E94 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				46848F071BAE132C001CA8AB /* RequestTableViewController.swift */,
+				46848F091BAE14F9001CA8AB /* RequestTableViewCell.swift */,
+				460423FD1C23401800973E94 /* RequestDetailViewController.swift */,
+			);
+			name = Requests;
+			sourceTree = "<group>";
+		};
 		461A88061BA20147008BC8D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,19 +313,9 @@
 				462927EA1BA35955005B02EE /* Spring */,
 				46A968001BA0DF1D003AB227 /* AppDelegate.swift */,
 				461A880E1BA2191F008BC8D3 /* LocalStore.swift */,
-				464432441BB4A14600B134D4 /* PropertyInfo.swift */,
-				46375DD71BDB044A00482036 /* ContactInfo.swift */,
-				464545781C0D11780019AE2B /* MessageInfo.swift */,
-				461A88071BA20262008BC8D3 /* HomeViewController.swift */,
-				46D4DC7A1BA514B800C4C9A0 /* TableViewController.swift */,
-				46A479161BA6222B00F88E0B /* PropertyTableViewCell.swift */,
-				46848F071BAE132C001CA8AB /* RequestTableViewController.swift */,
-				4639F7AA1BD7142E00478AD7 /* ContactTableViewController.swift */,
-				4639F7A81BD7019A00478AD7 /* ContactTableViewCell.swift */,
-				4645457A1C0D13360019AE2B /* MessageTableViewCell.swift */,
-				46848F091BAE14F9001CA8AB /* RequestTableViewCell.swift */,
-				46A479181BA6248D00F88E0B /* DetailViewController.swift */,
-				464545761C0CF8A00019AE2B /* ContactDetailViewController.swift */,
+				460424001C2345D200973E94 /* Property */,
+				460423FF1C23458700973E94 /* Contacts */,
+				460424011C2345F600973E94 /* Requests */,
 				46EF683A1BD59BE500AA52DF /* EditDetailViewController.swift */,
 				461A880A1BA2171B008BC8D3 /* MenuViewController.swift */,
 				461A87E61BA17335008BC8D3 /* LoginViewController.swift */,
@@ -447,6 +471,7 @@
 				462928161BA35955005B02EE /* SpringAnimation.swift in Sources */,
 				462928211BA3B28E005B02EE /* AddUnitViewController.swift in Sources */,
 				4629280D1BA35955005B02EE /* DesignableTextView.swift in Sources */,
+				460423FE1C23401800973E94 /* RequestDetailViewController.swift in Sources */,
 				4639F7A91BD7019A00478AD7 /* ContactTableViewCell.swift in Sources */,
 				4629281C1BA35955005B02EE /* SpringView.swift in Sources */,
 				46A968011BA0DF1D003AB227 /* AppDelegate.swift in Sources */,
@@ -475,7 +500,6 @@
 				46375DE01BE16E6000482036 /* ProfileImageCollectionViewController.swift in Sources */,
 				4645457B1C0D13360019AE2B /* MessageTableViewCell.swift in Sources */,
 				464432471BB4C9E800B134D4 /* UIViewControllerExtension.swift in Sources */,
-				461A88081BA20262008BC8D3 /* HomeViewController.swift in Sources */,
 				46848F081BAE132C001CA8AB /* RequestTableViewController.swift in Sources */,
 				462928151BA35955005B02EE /* Spring.swift in Sources */,
 				4629281A1BA35955005B02EE /* SpringTextField.swift in Sources */,

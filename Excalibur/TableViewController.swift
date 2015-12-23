@@ -30,7 +30,7 @@ class TableViewController: PFQueryTableViewController {
         
         // Show the current visitor's username
         if let pUserName = PFUser.currentUser()?["username"] as? String {
-            self.userNameLabel.title = "@" + pUserName
+            self.userNameLabel.title = pUserName
         }
         
         //let propertyQuery = PFQuery(className:"Property")
@@ -151,9 +151,9 @@ class TableViewController: PFQueryTableViewController {
         if let indexPath = self.tableView.indexPathForSelectedRow() {
             let row = Int(indexPath.row)
             detailScene.currentObject = objects?[row] as? PFObject!
-            detailScene.tName = nameVar
-            println("check")
-            println(nameVar)
+            //detailScene.tName = nameVar
+            //println("check")
+            //println(nameVar)
         }
         } else if (segue.identifier == "menuSegue") {
             let menuScene = segue.destinationViewController as! MenuViewController
