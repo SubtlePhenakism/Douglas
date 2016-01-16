@@ -22,9 +22,9 @@ class ProfileImageCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var myBundle : NSBundle = NSBundle.mainBundle()
+        let myBundle : NSBundle = NSBundle.mainBundle()
         myImages = myBundle.pathsForResourcesOfType("png", inDirectory: "Profile")
-        println(myImages?.count)
+        print(myImages?.count)
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -65,7 +65,7 @@ class ProfileImageCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) 
         
         cell.backgroundColor = cellColor ? UIColor.redColor() : UIColor.blueColor()
         cellColor = !cellColor

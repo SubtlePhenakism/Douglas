@@ -61,7 +61,7 @@ class RequestTableViewController: PFQueryTableViewController {
     
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
-        var query = PFQuery(className: "Request")
+        let query = PFQuery(className: "Request")
         query.includeKey("location")
         query.includeKey("sender")
         query.orderByDescending("createdAt")
@@ -92,7 +92,7 @@ class RequestTableViewController: PFQueryTableViewController {
         }
         
         // Display flag image
-        var initialThumbnail = UIImage(named: "question")
+        let initialThumbnail = UIImage(named: "question")
         cell?.requestImage?.image = initialThumbnail
         if let thumbnail = object?["image"] as? PFFile {
             cell.requestImage?.file = thumbnail
@@ -116,7 +116,7 @@ class RequestTableViewController: PFQueryTableViewController {
         if (segue.identifier! == "RequestViewToDetailView") {
             let detailScene = segue.destinationViewController as! RequestDetailViewController
             // Pass the selected object to the destination view controller.
-            if let indexPath = self.tableView.indexPathForSelectedRow() {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
                 let row = Int(indexPath.row)
                 detailScene.currentObject = objects?[row] as? PFObject!
             }

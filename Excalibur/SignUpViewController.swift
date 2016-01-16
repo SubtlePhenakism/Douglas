@@ -25,15 +25,15 @@ class SignUpViewController: UIViewController {
         var userRole = "Landlord"
         
         // Validate the text fields
-        if count(username) < 5 {
+        if username.characters.count < 5 {
             var alert = UIAlertView(title: "Invalid", message: "Username must be greater than 5 characters", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
-        } else if count(password) < 8 {
+        } else if password.characters.count < 8 {
             var alert = UIAlertView(title: "Invalid", message: "Password must be greater than 8 characters", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
-        } else if count(email) < 8 {
+        } else if email.characters.count < 8 {
             var alert = UIAlertView(title: "Invalid", message: "Please enter a valid email address", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
@@ -71,7 +71,7 @@ class SignUpViewController: UIViewController {
                     var alert = UIAlertView(title: "Success", message: "Signed Up", delegate: self, cancelButtonTitle: "OK")
                     alert.show()
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("addUnit") as! UIViewController
+                        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("addUnit") 
                         self.presentViewController(viewController, animated: true, completion: nil)
                     })
                 }

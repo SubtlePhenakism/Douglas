@@ -30,7 +30,7 @@ class ContactTableViewController: PFQueryTableViewController {
     }
     
     override func queryForTable() -> PFQuery{
-        var query = PFUser.query()
+        let query = PFUser.query()
         //query.orderByAscending("username")
         query!.whereKey("userRole", equalTo:"tenant")
         //query?.includeKey("House")
@@ -105,7 +105,7 @@ class ContactTableViewController: PFQueryTableViewController {
         if (segue.identifier! == "ContactTableViewToContactDetailView") {
             let detailScene = segue.destinationViewController as! ContactDetailViewController
             // Pass the selected object to the destination view controller.
-            if let indexPath = self.tableView.indexPathForSelectedRow() {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
                 let row = Int(indexPath.row)
                 detailScene.currentObject = objects?[row] as? PFObject!
             }

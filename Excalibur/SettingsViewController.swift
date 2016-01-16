@@ -50,7 +50,7 @@ class SettingsViewController: UIViewController, PhotoPickersDelegate {
         PFUser.logOut()
         
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Login") as! UIViewController
+            let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Login") 
             self.presentViewController(viewController, animated: true, completion: nil)
         })
         
@@ -131,15 +131,15 @@ class SettingsViewController: UIViewController, PhotoPickersDelegate {
 //        }
         
         if (profileImage == nil){
-            println("test1")
+            print("test1")
 //            var initialThumbnail = UIImage(named: "question")
 //            self.profileImageView.image = initialThumbnail
-            println(profileImage)
+            print(profileImage)
         } else {
-            println("TestImage")
+            print("TestImage")
             self.profileImageView.image = profileImage
             if let currentUserProfile = PFUser.currentUser() {
-                println("user check")
+                print("user check")
                 //currentUserProfile["image"] = profileImage
                 let pictureData = UIImagePNGRepresentation(profileImage)
                 
@@ -150,14 +150,14 @@ class SettingsViewController: UIViewController, PhotoPickersDelegate {
                     if succeeded {
                         //2
                         self.saveUserImage(file)
-                        println("succeeded")
+                        print("succeeded")
                     } else if let error = error {
                         //3
                         self.showErrorView(error)
                     }
                     }, progressBlock: { percent in
                         //4
-                        println("Uploaded: \(percent)%")
+                        print("Uploaded: \(percent)%")
                 })
                 
             }
@@ -185,12 +185,12 @@ class SettingsViewController: UIViewController, PhotoPickersDelegate {
                 if error == nil && objects != nil {
                     if let objects = objects as? [PFObject] {
                         propertyArrary = objects
-                        println("Successfully retrieved",(objects.count),"objects.")
+                        print("Successfully retrieved",(objects.count),"objects.")
                         self.unitCount.text = String(objects.count)
                     } }
             })
             
-            println(loggedInUserId)
+            print(loggedInUserId)
         }
         
         

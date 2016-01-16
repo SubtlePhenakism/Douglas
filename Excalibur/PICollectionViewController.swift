@@ -63,9 +63,9 @@ class PICollectionViewController: UICollectionViewController {
             //let detailScene = segue.destinationViewController as! SettingsViewController
             let cell = sender as! ProfileImageCell
             let image = cell.imageView
-            println(cell)
-            println("cellTest")
-            var destination = segue.destinationViewController as! SettingsViewController
+            print(cell)
+            print("cellTest")
+            let destination = segue.destinationViewController as! SettingsViewController
             destination.profileImage = image.image
             
             

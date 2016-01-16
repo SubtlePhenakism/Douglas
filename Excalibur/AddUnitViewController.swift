@@ -56,7 +56,7 @@ class AddUnitViewController: UIViewController {
             }
             }, progressBlock: { percent in
                 //4
-                println("Uploaded: \(percent)%")
+                print("Uploaded: \(percent)%")
         })
     }
     
@@ -71,7 +71,7 @@ class AddUnitViewController: UIViewController {
                 self.navigationController?.popViewControllerAnimated(true)
             } else {
                 //4
-                if let errorMessage = error?.userInfo?["error"] as? String {
+                if let errorMessage = error?.userInfo["error"] as? String {
                     self.showErrorView(error!)
                 }
             }
@@ -96,15 +96,15 @@ class AddUnitViewController: UIViewController {
         code = title.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         property["tenantCode"] = code
         
-        if count(self.cityField.text) < 1 {
+        if self.cityField.text.characters.count < 1 {
             var alert = UIAlertView(title: "Invalid", message: "Please enter your city", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
-        } else if count(stateField.text) < 2 {
+        } else if stateField.text.characters.count < 2 {
             var alert = UIAlertView(title: "Invalid", message: "Please enter your state", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
-        } else if count(zipField.text) < 5 {
+        } else if zipField.text.characters.count < 5 {
             var alert = UIAlertView(title: "Invalid", message: "Please enter a valid zip code", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
@@ -131,7 +131,7 @@ class AddUnitViewController: UIViewController {
                     var alert = UIAlertView(title: "Success", message: "New property added!", delegate: self, cancelButtonTitle: "OK")
                     alert.show()
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Nav") as! UIViewController
+                        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Nav") 
                         self.presentViewController(viewController, animated: true, completion: nil)
                     })
                 }

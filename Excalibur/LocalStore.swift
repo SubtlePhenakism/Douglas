@@ -28,12 +28,12 @@ struct LocalStore {
     
     private static func arrayForKey(key: String, containsId id: Int) -> Bool {
         let elements = userDefaults.arrayForKey(key) as? [Int] ?? []
-        return contains(elements, id)
+        return elements.contains(id)
     }
     
     private static func appendId(id: Int, toKey key: String) {
         let elements = userDefaults.arrayForKey(key) as? [Int] ?? []
-        if !contains(elements, id) {
+        if !elements.contains(id) {
             userDefaults.setObject(elements + [id], forKey: key)
         }
     }

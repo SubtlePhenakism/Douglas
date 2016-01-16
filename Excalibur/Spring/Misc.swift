@@ -9,12 +9,12 @@
 import UIKit
 
 public extension String {
-    public var length: Int { return count(self) }
+    public var length: Int { return self.characters.count }
 }
 
 public func htmlToAttributedString(text: String) -> NSAttributedString! {
     let htmlData = text.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
-    let htmlString = NSAttributedString(data: htmlData!, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil, error: nil)
+    let htmlString = try? NSAttributedString(data: htmlData!, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil)
     
     return htmlString
 }
@@ -46,12 +46,12 @@ public extension UIColor {
         var alpha: CGFloat = 1.0
         
         if hex.hasPrefix("#") {
-            let index   = advance(hex.startIndex, 1)
+            let index   = hex.startIndex.advancedBy(1)
             let hex     = hex.substringFromIndex(index)
             let scanner = NSScanner(string: hex)
             var hexValue: CUnsignedLongLong = 0
             if scanner.scanHexLongLong(&hexValue) {
-                switch (count(hex)) {
+                switch (hex.characters.count) {
                 case 3:
                     red   = CGFloat((hexValue & 0xF00) >> 8)       / 15.0
                     green = CGFloat((hexValue & 0x0F0) >> 4)       / 15.0
@@ -71,13 +71,13 @@ public extension UIColor {
                     blue  = CGFloat((hexValue & 0x0000FF00) >> 8)  / 255.0
                     alpha = CGFloat(hexValue & 0x000000FF)         / 255.0
                 default:
-                    print("Invalid RGB string, number of characters after '#' should be either 3, 4, 6 or 8")
+                    print("Invalid RGB string, number of characters after '#' should be either 3, 4, 6 or 8", terminator: "")
                 }
             } else {
-                println("Scan hex error")
+                print("Scan hex error")
             }
         } else {
-            print("Invalid RGB string, missing '#' as prefix")
+            print("Invalid RGB string, missing '#' as prefix", terminator: "")
         }
         self.init(red:red, green:green, blue:blue, alpha:alpha)
     }
@@ -98,13 +98,13 @@ public func UIColorFromRGB(rgbValue: UInt) -> UIColor {
 }
 
 public func stringFromDate(date: NSDate, format: String) -> String {
-    var dateFormatter = NSDateFormatter()
+    let dateFormatter = NSDateFormatter()
     dateFormatter.dateFormat = format
     return dateFormatter.stringFromDate(date)
 }
 
 public func dateFromString(date: String, format: String) -> NSDate {
-    var dateFormatter = NSDateFormatter()
+    let dateFormatter = NSDateFormatter()
     dateFormatter.dateFormat = format
     return dateFormatter.dateFromString(date)!
 }
@@ -113,11 +113,11 @@ public func randomStringWithLength (len : Int) -> NSString {
     
     let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
     
-    var randomString : NSMutableString = NSMutableString(capacity: len)
+    let randomString : NSMutableString = NSMutableString(capacity: len)
     
     for (var i=0; i < len; i++){
-        var length = UInt32 (letters.length)
-        var rand = arc4random_uniform(length)
+        let length = UInt32 (letters.length)
+        let rand = arc4random_uniform(length)
         randomString.appendFormat("%C", letters.characterAtIndex(Int(rand)))
     }
     
@@ -126,11 +126,11 @@ public func randomStringWithLength (len : Int) -> NSString {
 
 public func timeAgoSinceDate(date:NSDate, numericDates:Bool) -> String {
     let calendar = NSCalendar.currentCalendar()
-    let unitFlags = NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitWeekOfYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitSecond
+    let unitFlags: NSCalendarUnit = [NSCalendarUnit.Minute, NSCalendarUnit.Hour, NSCalendarUnit.Day, NSCalendarUnit.WeekOfYear, NSCalendarUnit.Month, NSCalendarUnit.Year, NSCalendarUnit.Second]
     let now = NSDate()
     let earliest = now.earlierDate(date)
     let latest = (earliest == now) ? date : now
-    let components:NSDateComponents = calendar.components(unitFlags, fromDate: earliest, toDate: latest, options: nil)
+    let components:NSDateComponents = calendar.components(unitFlags, fromDate: earliest, toDate: latest, options: [])
     
     if (components.year >= 2) {
         return "\(components.year)y"

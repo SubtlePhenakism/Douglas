@@ -37,7 +37,7 @@ class RequestDetailViewController: UIViewController {
             self.requestDescription.text = request["note"] as? String
             self.requestStatus.text = request["status"] as? String
             //RequestImage
-            var initialThumbnail = UIImage(named: "question")
+            let initialThumbnail = UIImage(named: "question")
             self.requestImage.image = initialThumbnail
             if let requestImageFile = request["image"] as? PFFile {
                 self.requestImage.file = requestImageFile

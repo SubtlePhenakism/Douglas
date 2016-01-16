@@ -59,14 +59,14 @@ class UploadImageViewController: UIViewController {
             }
             }, progressBlock: { percent in
                 //4
-                println("Uploaded: \(percent)%")
+                print("Uploaded: \(percent)%")
         })
     }
     
     func savePropertyInfo(file: PFFile)
     {
         var property = PFObject(className: "Property")
-        println(property)
+        print(property)
         //1
         let propertyInfo = PropertyInfo(image: file, user: PFUser.currentUser()!)
         //2
@@ -76,7 +76,7 @@ class UploadImageViewController: UIViewController {
                 self.navigationController?.popViewControllerAnimated(true)
             } else {
                 //4
-                if let errorMessage = error?.userInfo?["error"] as? String {
+                if let errorMessage = error?.userInfo["error"] as? String {
                     self.showErrorView(error!)
                 }
             }

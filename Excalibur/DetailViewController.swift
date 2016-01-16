@@ -48,7 +48,7 @@ class DetailViewController: UIViewController {
 //            )
 //            var saveAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.Default) { (action) -> Void in
         
-        let pictureData = UIImagePNGRepresentation(imageToUpload.image)
+        let pictureData = UIImagePNGRepresentation(imageToUpload.image!)
 //        
 //        //Upload a new picture
 //        //1
@@ -73,7 +73,7 @@ class DetailViewController: UIViewController {
                     }
                     if (self.imageToUpload != nil) {
                         updateObject["image"] = PFFile(name: "image", data: pictureData)
-                        println("image has value")
+                        print("image has value")
                     }
                     var spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0, 0, 150, 150)) as UIActivityIndicatorView
                     spinner.startAnimating()
@@ -277,7 +277,7 @@ class DetailViewController: UIViewController {
             //println(object["currentContract"])
             //self.currentTenantName.text = object["lessee"] as? String
             
-            var initialPropertyThumbnail = UIImage(named: "home60")
+            let initialPropertyThumbnail = UIImage(named: "home60")
             self.propertyImageView.image = initialPropertyThumbnail
             if let propertyThumbnail = object["image"] as? PFFile {
                 self.propertyImageView.file = propertyThumbnail
@@ -299,7 +299,7 @@ class DetailViewController: UIViewController {
 //            }
 //        }
         
-        var initialTenantThumbnail = UIImage(named: "question")
+        let initialTenantThumbnail = UIImage(named: "question")
         self.tenantImageView.image = initialTenantThumbnail
         var currentTenantImage : PFFile
         if let info = currentTenant {

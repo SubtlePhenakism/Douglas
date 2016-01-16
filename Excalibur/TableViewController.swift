@@ -43,7 +43,7 @@ class TableViewController: PFQueryTableViewController {
         if (PFUser.currentUser() == nil) {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 
-                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Login") as! UIViewController
+                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Login") 
                 self.presentViewController(viewController, animated: true, completion: nil)
             })
         }
@@ -67,7 +67,7 @@ class TableViewController: PFQueryTableViewController {
     
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
-        var query = PFQuery(className: "Property")
+        let query = PFQuery(className: "Property")
         //query.orderByAscending("title")
         query.includeKey("currentContract")
         query.includeKey("username")
@@ -101,19 +101,19 @@ class TableViewController: PFQueryTableViewController {
         }
         var name = ""
         if let contract = object?["currentContract"] as? PFObject {
-            println(contract["lessee"])
-            println(object?["currentTenant"])
+            print(contract["lessee"])
+            print(object?["currentTenant"])
             if let lessee = contract["lessee"] as? PFUser {
-                println(lessee.objectId)
+                print(lessee.objectId)
                 let usernameQuery = PFQuery.getUserObjectWithId(lessee.objectId!)
                 let tenantUsername = usernameQuery?.username
-                println(tenantUsername)
+                print(tenantUsername)
                 name = (tenantUsername as String?)!
                 
             }
-            println()
+            print("")
         }
-        println(name)
+        print(name)
         nameVar = (name as String?)!
         
 //        if let contract = object?["currentContract"] as? PFObject {
@@ -148,7 +148,7 @@ class TableViewController: PFQueryTableViewController {
         if (segue.identifier! == "TableViewToDetailView") {
         let detailScene = segue.destinationViewController as! DetailViewController
         // Pass the selected object to the destination view controller.
-        if let indexPath = self.tableView.indexPathForSelectedRow() {
+        if let indexPath = self.tableView.indexPathForSelectedRow {
             let row = Int(indexPath.row)
             detailScene.currentObject = objects?[row] as? PFObject!
             //detailScene.tName = nameVar

@@ -39,7 +39,7 @@ class EditDetailViewController: UIViewController {
         } else {
             
             // Create a new parse object
-            var updateObject = PFObject(className:"Property")
+            let updateObject = PFObject(className:"Property")
             
             updateObject["title"] = propertyTitle.text
             updateObject["address"] = propertyAddress.text

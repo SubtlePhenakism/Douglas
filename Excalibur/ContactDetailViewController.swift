@@ -40,7 +40,7 @@ class ContactDetailViewController: UIViewController {
     
     @IBAction func sendMessageButton(sender: AnyObject) {
         var message = self.messageTextField.text
-        if count(message) < 1 {
+        if message.characters.count < 1 {
             var alert = UIAlertView(title: "Invalid", message: "Please enter a message before sending", delegate: self, cancelButtonTitle: "OK")
             alert.show()
         } else {
@@ -107,15 +107,15 @@ class ContactDetailViewController: UIViewController {
     func queryForMessages() {
         var messagesQuery: PFQuery!
         if currentObject != nil {
-        var senderQuery = PFQuery(className: "Message")
+        let senderQuery = PFQuery(className: "Message")
         senderQuery.whereKey("sender", equalTo: currentObject!)
         senderQuery.whereKey("receiver", equalTo: PFUser.currentUser()!)
-        var receiverQuery = PFQuery(className: "Message")
+        let receiverQuery = PFQuery(className: "Message")
         receiverQuery.whereKey("receiver", equalTo: currentObject!)
         receiverQuery.whereKey("sender", equalTo: PFUser.currentUser()!)
         messagesQuery = PFQuery.orQueryWithSubqueries([senderQuery, receiverQuery])
         } else {
-            println("no current object")
+            print("no current object")
         }
         messagesQuery.orderByAscending("createdAt")
         //return messageQuery
@@ -127,15 +127,15 @@ class ContactDetailViewController: UIViewController {
         //var messageQuery = MessageInfo.query()
         var messageQuery: PFQuery!
         if currentObject != nil {
-            var senderQuery = PFQuery(className: "Message")
+            let senderQuery = PFQuery(className: "Message")
             senderQuery.whereKey("sender", equalTo: currentObject!)
             senderQuery.whereKey("receiver", equalTo: PFUser.currentUser()!)
-            var receiverQuery = PFQuery(className: "Message")
+            let receiverQuery = PFQuery(className: "Message")
             receiverQuery.whereKey("receiver", equalTo: currentObject!)
             receiverQuery.whereKey("sender", equalTo: PFUser.currentUser()!)
             messageQuery = PFQuery.orQueryWithSubqueries([senderQuery, receiverQuery])
         } else {
-            println("no current object")
+            print("no current object")
         }
         messageQuery.orderByDescending("createdAt")
 
@@ -145,13 +145,13 @@ class ContactDetailViewController: UIViewController {
             
             if (error == nil) {
                 
-                var temp: NSArray = objects as NSArray!
+                let temp: NSArray = objects as NSArray!
                 self.noteObjects = temp.mutableCopy() as! NSMutableArray
                 self.tableView.reloadData()
                 
             } else {
                 
-                println(error)
+                print(error)
             }
         })
     }
@@ -163,15 +163,15 @@ class ContactDetailViewController: UIViewController {
         //let messageInfo = MessageInfo.query()
         var messageInfo: PFQuery!
         if currentObject != nil {
-            var senderQuery = PFQuery(className: "Message")
+            let senderQuery = PFQuery(className: "Message")
             senderQuery.whereKey("sender", equalTo: currentObject!)
             senderQuery.whereKey("receiver", equalTo: PFUser.currentUser()!)
-            var receiverQuery = PFQuery(className: "Message")
+            let receiverQuery = PFQuery(className: "Message")
             receiverQuery.whereKey("receiver", equalTo: currentObject!)
             receiverQuery.whereKey("sender", equalTo: PFUser.currentUser()!)
             messageInfo = PFQuery.orQueryWithSubqueries([senderQuery, receiverQuery])
         } else {
-            println("no current object")
+            print("no current object")
         }
         messageInfo?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             
@@ -186,7 +186,7 @@ class ContactDetailViewController: UIViewController {
                 //self.messageCount.text = String(numOfMessages)
                 
             } else {
-                println(error)
+                print(error)
             }
         })
     }
@@ -213,7 +213,7 @@ class ContactDetailViewController: UIViewController {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: MessageTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("MessageCell", forIndexPath: indexPath) as! MessageTableViewCell
         
-        var object : PFObject = self.noteObjects.objectAtIndex(indexPath.row) as! PFObject
+        let object : PFObject = self.noteObjects.objectAtIndex(indexPath.row) as! PFObject
         cell.messageText?.text = object["message"] as? String
         
         if let sender = object["sender"] as? PFUser {

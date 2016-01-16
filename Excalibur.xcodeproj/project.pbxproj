@@ -406,6 +406,8 @@
 		46A967F31BA0DF1D003AB227 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = TreeNine;
 				TargetAttributes = {
